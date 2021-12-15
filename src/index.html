@@ -16,9 +16,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      <script type="text/javascript">
+        (function () {
+          // https://dashboard.emailjs.com/admin/integration
+          emailjs.init('user_UKY9HDWsvAhYtG313sLIA');
+        })();
+      </script>
+       <script type="text/javascript">
+        window.onload = function () {
+          document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('service_s5yz4nw', 'template_1y3cwkr', this)
+              .then(function () {
+                console.log('SUCCESS!');
+              }, function (error) {
+                console.log('FAILED...', error);
+              });
+          });
+        }
+      </script>
+    
+    
+   <style>
+   .containers{
+     margin: auto;
+     width: 60%;
+     height: 60%;
+   }
 
+   form {
+      margin-top: 20px;
+    
+  display: flex;
+  flex-direction: column;
+    }
+
+    input[type="text"],  input[type="email"]{
+      width: 50%;
+      height: 50px; 
+      border: none;
+      margin: 10px 0px;
+      font-size: 14px;
+      padding-left: 10px;
+      
+    
+    }
+textarea{
+   font-size: 50px;
+  width:  100%;
+  
+  }
+ 
+ textarea::placeholder{
+      font-size: 20px;
+    }
+   input:focus, textarea:focus {
+ outline: none;
+     }
+  
+  .contacts{
+
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-bottom: 30px;
+  }
+
+  button {
+ border: none;
+ padding: 15px;
+  background-color: #34e89e;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  width: 20%;
+  }
+
+     </style>
     <!-- Todo: put here your site title -->
-    <title>[Your name here] | Developer</title>
+    <title>Mutalib | Developer</title>
     <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
     <meta name="keywords" content="[username], [name], skill" />
     <!-- Todo: improve your SEO by adding a small description of you -->
@@ -46,16 +127,16 @@
     <section id="hero" class="jumbotron">
       <div class="container">
         <h1 class="hero-title load-hidden">
-          Hi, my name is <span class="text-color-main">Your Name</span>
+          Hi, my name is <span class="text-color-main">Mutalib Adebayo</span>
           <br />
-          I'm the Unknown Developer.
+          I'm the Developer you need.
         </h1>
         <p class="hero-cta load-hidden">
           <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
-            >Know more</a
+            >Hire Me</a
           >
         </p>
-      </div>
+      </div> 
     </section>
     <!-- /END Hero Section -->
 
@@ -71,7 +152,7 @@
                 class="img-fluid rounded shadow-lg"
                 height="auto"
                 width="300px"
-                src="assets/profile.jpg"
+                src="assets/ope4.jpg"
                 alt="Profile Image"
               />
             </div>
@@ -79,11 +160,12 @@
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__info load-hidden">
               <p class="about-wrapper__info-text">
-                This is where you can describe about yourself. The more you
-                describe about yourself, the more chances you can!
+          my name is Mutalib Adebayo. I graduated from the University of Ilorin with a B.Sc. degree in Agricultural Engineering. I
+          am a Frontend Web Developer with 2years of experience in HTML, CSS, JAVASCRIPT, REACT, REDUX and TYPESCRIPT.  
               </p>
               <p class="about-wrapper__info-text">
-                Extra Information about you! like hobbies and your goals.
+            I like working with people and sharing ideas because I believe it's a chance for me to grow as a developer.<br/>
+            I like watching football, traveling and swimming.
               </p>
               <span class="d-flex mt-3">
                 <a
@@ -112,21 +194,17 @@
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 0</h3>
+                <h3 class="project-wrapper__text-title">Monster Rolodex</h3>
                 <div>
                   <p class="mb-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Excepturi neque, ipsa animi maiores repellendus distinctio
-                    aperiam earum dolor voluptatum consequatur blanditiis
-                    inventore debitis fuga numquam voluptate ex architecto
-                    itaque molestiae.
+                this is a react project built with API, where you could search for your favorite monster
                   </p>
                 </div>
                 <a
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn cta-btn--hero"
-                  href="#!"
+                  href="https://mutalib03.github.io/Monster-Rolodex/"
                 >
                   See Live
                 </a>
@@ -134,7 +212,61 @@
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn text-color-main"
-                  href="#!"
+                  href="https://github.com/mutalib03/Monster-Rolodex"
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#!" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/logo.png"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+
+          <!-- Notice: each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">INFINITE SCROLL</h3>
+                <div>
+                  <p class="mb-4">
+                  Like in social media platforms, this application allows you to scroll through images continuously without stopping by
+                  implementing infinite scroll functionality with Unsplash API
+                 <br/>
+                 <br/>
+                     ---HTML, CSS, JAVASCRIPT---
+                  </p>
+                </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href=" https://mutalib03.github.io/infinite-scroll/"
+                >
+                  See Live 
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="https://github.com/mutalib03/infinite-scroll"
                 >
                   Source Code
                 </a>
@@ -166,21 +298,20 @@
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 1</h3>
+                <h3 class="project-wrapper__text-title">CRWN-CLOTHING</h3>
                 <div>
                   <p class="mb-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Excepturi neque, ipsa animi maiores repellendus distinctio
-                    aperiam earum dolor voluptatum consequatur blanditiis
-                    inventore debitis fuga numquam voluptate ex architecto
-                    itaque molestiae.
+                    An e-commerce clothing website that makes use of firebase authentication and stripe API for payment.
+                      <br />
+                      <br />
+                      ---REACT, REDUX, STYLED-COMPONENT, FIREBASE, STRIPE API---
                   </p>
                 </div>
                 <a
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn cta-btn--hero"
-                  href="#!"
+                  href="https://mutalib-ecommerce.herokuapp.com/"
                 >
                   See Live
                 </a>
@@ -188,9 +319,9 @@
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn text-color-main"
-                  href="#!"
+                  href="https://github.com/mutalib03/crwn-clothing"
                 >
-                  Source Code
+                Source Code
                 </a>
               </div>
             </div>
@@ -216,59 +347,75 @@
           </div>
           <!-- /END Project -->
 
-          <!-- Notice: each .row is a project -->
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 2</h3>
-                <div>
-                  <p class="mb-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Excepturi neque, ipsa animi maiores repellendus distinctio
-                    aperiam earum dolor voluptatum consequatur blanditiis
-                    inventore debitis fuga numquam voluptate ex architecto
-                    itaque molestiae.
-                  </p>
-                </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="#!"
-                >
-                  See Live
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="#!"
-                >
-                  Source Code
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/project.jpg"
-                    />
+            <!-- Notice: each .row is a project -->
+            <div class="row">
+              <div class="col-lg-4 col-sm-12">
+                <div class="project-wrapper__text load-hidden">
+                  <h3 class="project-wrapper__text-title">JOKE-TELLER</h3>
+                  <div>
+                    <p class="mb-4">
+                  this is a joke-teller application that makes use of a text-to-speech API to say jokes
+                      <br />
+                      <br />
+                      ---HTML, CSS, JAVASCRIPT---
+                    </p>
                   </div>
-                </a>
+                  <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://mutalib03.github.io/joke-teller/">
+                    See Live
+                  </a>
+                  <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                    href="https://github.com/mutalib03/joke-teller">
+                    Source Code
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-8 col-sm-12">
+                <div class="project-wrapper__image load-hidden">
+                  <a rel="noreferrer" href="#!" target="_blank">
+                    <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                      class="thumbnail rounded js-tilt">
+                      <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- /END Project -->
+            <!-- /END Project -->
+
+              <!-- Notice: each .row is a project -->
+              <div class="row">
+                <div class="col-lg-4 col-sm-12">
+                  <div class="project-wrapper__text load-hidden">
+                    <h3 class="project-wrapper__text-title">MOVIE-SEARCH</h3>
+                    <div>
+                      <p class="mb-4">
+                       this is an application which can be used to search for movies to know its de
+                        <br />
+                        <br />
+                        ---REACT, REDUX, STYLED-COMPONENT, FIREBASE, STRIPE API---
+                      </p>
+                    </div>
+                    <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://mutalib-movie-app.herokuapp.com/">
+                      See Live
+                    </a>
+                    <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                      href="https://github.com/mutalib03/movie-search">
+                      Source Code
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-sm-12">
+                  <div class="project-wrapper__image load-hidden">
+                    <a rel="noreferrer" href="#!" target="_blank">
+                      <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                        class="thumbnail rounded js-tilt">
+                        <img alt="Project Image" class="img-fluid" src="assets/project.jpg" />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- /END Project -->
         </div>
       </div>
     </section>
@@ -276,21 +423,25 @@
 
     <!-- **** Contact Section **** -->
     <section id="contact">
-      <div class="container">
+   
         <h2 class="section-title">Contact</h2>
-        <div class="contact-wrapper load-hidden">
-          <p class="contact-wrapper__text">[Put your call to action here]</p>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            class="cta-btn cta-btn--resume"
-            href="mailto:example@email.com"
-            >Call to Action</a
-          >
-        </div>
+   <div class="containers">
+      <div class="contacts">
+    <i style="font-size:25px;"class="fa fa-envelope fa-inverse" aria-hidden="true"> adebayomutalib5@gmail.com</i>
+    <i style="font-size:25px;"class="fa fa-phone" aria-hidden="true"> +2347082131382</i>
       </div>
-    </section>
-    <!-- /END Contact Section -->
+          <p class="desc">Get in touch. you can mail me here</p>
+  <form id="contact-form" >
+    <input type="hidden" name="contact_number"/>
+    <input type="text" name="from_name" placeholder="NAME" required/>
+    <input type="email" name="reply_to" placeholder="EMAIL" required/>
+    <textarea style="  font-size: 20px;" rows="9" name="message" placeholder="Message"></textarea>
+    <button type="submit">SUBMIT</button>
+  </form>
+
+   </div>
+ </section>
+    <!-- /END Contact Section --> 
 
     <!-- **** Footer Section **** -->
     <footer class="footer navbar-static-bottom">
@@ -298,15 +449,18 @@
         <a rel="noreferrer" href="#top" class="back-to-top">
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
+            <p>you can check my profiles</p>
         <div class="social-links">
+           
           <a rel="noreferrer" href="#!" target="_blank">
             <i class="fa fa-twitter fa-inverse"></i>
+             
           </a>
           <a rel="noreferrer" href="#!" target="_blank">
             <i class="fa fa-linkedin fa-inverse"></i>
           </a>
           <a rel="noreferrer" href="#!" target="_blank">
-            <i class="fa fa-github fa-inverse"></i>
+            <i  class="fa fa-github fa-inverse"></i>
           </a>
         </div>
 
@@ -320,33 +474,12 @@
           >
         </p>
 
-        <!-- TO DO: remove this entire paragraph once you finish your portfolio -->
-        <p class="mt-3 pt-3">
-          <a
-            rel="noreferrer"
-            class="github-button"
-            href="https://github.com/cobidev/simplefolio/fork"
-            data-icon="octicon-repo-forked"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Fork ntkme/github-buttons on GitHub"
-            >Fork</a
-          >
-          <a
-            rel="noreferrer"
-            class="github-button"
-            href="https://github.com/cobidev/simplefolio"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star cobidev/simplefolio on GitHub"
-            >Star</a
-          >
-        </p>
+    
       </div>
     </footer>
     <!-- /END Footer Section -->
 
     <script defer type="module" src="index.js"></script>
+ 
   </body>
 </html>
